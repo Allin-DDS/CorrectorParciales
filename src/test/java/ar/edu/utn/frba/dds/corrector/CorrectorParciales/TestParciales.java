@@ -8,8 +8,10 @@ import java.util.Collection;
 import org.junit.Before;
 import org.junit.Test;  
 
+
 public class TestParciales {
 	
+	private static final String String = null;
 	public Examen examen;
 	Collection<PreguntaYRespuesta> preguntasYRespuestas = new ArrayList<PreguntaYRespuesta>();
 	
@@ -19,11 +21,11 @@ public class TestParciales {
 public void crearExamen(){
 		
 		
-		//PreguntaYRespuesta primerPregunta = new VerdaderoOFalso('V','F',5);
+		PreguntaYRespuesta primerPregunta = new VerdaderoOFalso('V','V',5);
 		PreguntaYRespuesta segundaPregunta = new MultipleChoice(1,1,5);
-		PreguntaYRespuesta tercerPregunta = new PreguntaConcreta("se fue a la B","se fue a la B",5);
+		PreguntaYRespuesta tercerPregunta = new PreguntaConcreta("A","A",5);
 
-		//preguntasYRespuestas.add(primerPregunta);
+		preguntasYRespuestas.add(primerPregunta);
 		preguntasYRespuestas.add(segundaPregunta);
 		preguntasYRespuestas.add(tercerPregunta);
 		
@@ -33,13 +35,11 @@ public void crearExamen(){
 	}
 	@Test 
 	public void Test()
-	{
-		double resultado = examen.calcularNotaCriterioReglaDeTresSimple() ;
-		//return resultado;
-		assertTrue(resultado == 10);  
-	
+	{		double resultado = examen.calcularNotaCriterioReglaDeTresSimple();
+				assertTrue( resultado == 10);  
+		
 	}
-	
+
 
 	
 }

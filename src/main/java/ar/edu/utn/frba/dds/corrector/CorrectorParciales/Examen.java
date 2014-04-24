@@ -4,15 +4,24 @@ import java.util.Collection;
 
 
 public class Examen{
+	
 	Collection<PreguntaYRespuesta> preguntasYRespuestas = new ArrayList<PreguntaYRespuesta>();
+	
+	public void añadirPregunta(PreguntaYRespuesta preguntaYRespuesta){
+		preguntasYRespuestas.add(new PreguntaYRespuesta());
+
+}
 
 public Examen(Collection<PreguntaYRespuesta> preguntasYRespuestas){
 	this.preguntasYRespuestas=preguntasYRespuestas;
 }
 
+
+
+
 public double calcularNotaCriterioReglaDeTresSimple(){ //Lo calcula usando la regla de 3 simple
-	int puntajeTotal =this.puntajeTotalDePregunta();
-	int puntajeAlumno = this.puntajeTotalDelAlumno();
+	double puntajeTotal = this.puntajeTotalDePregunta();
+	double puntajeAlumno = this.puntajeTotalDelAlumno();
 	double laNota = 0;
 	laNota = (puntajeAlumno*10)/puntajeTotal;
 	return(laNota);
